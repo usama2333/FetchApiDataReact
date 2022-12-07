@@ -4,10 +4,10 @@ function App() {
 
   const [data, setData] = useState();
 
-  const showData=async()=>{
+  const showData = () => {
 
     try{
-      const fetchPromise = await fetch(`https://fakestoreapi.com/products`).then((res)=>{
+      const fetchPromise = fetch('https://fakestoreapi.com/products').then((res)=>{
         return res.json()
       }).then((test)=>{
    
@@ -38,9 +38,9 @@ function App() {
             </tr>
             </thead>
 
-            
-           {data?.map((item)=>
             <tbody>
+           {data?.map((item)=>
+            
               <tr>
                 <td>{item.id}</td>
                 <td>{item.title}</td>
@@ -53,7 +53,10 @@ function App() {
                 <td>{item.rating.rate}</td>
               </tr>
         
-              </tbody> )}
+             
+
+              )}
+               </tbody> 
              
        
          
